@@ -16,7 +16,8 @@
     async function addText(listEl,items){
         const weather = await getWeather(items);
         const getWeatherTemp = JSON.stringify(weather, null,2)
-        console.log(getWeatherTemp.main.temp)//-----не выводится температура, пишет undefined
+        console.log(getWeatherTemp)
+        console.log(getWeatherTemp['"main"']['"temp"'])//-----не выводится температура, пишет undefined
         listEl.innerHTML = `<ol>${`<li>${getWeatherTemp}</li>`}</ol>`;
     }
 
